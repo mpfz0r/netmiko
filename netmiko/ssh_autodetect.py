@@ -316,7 +316,7 @@ SSH_MAPPER_DICT = {
     },
     "fortinet": {
         "cmd": "get system status",
-        "search_patterns": [r"FortiOS", r"FortiGate"],
+        "search_patterns": [r"FortiOS", r"FortiGate", r"FortiSwitch"],
         "priority": 99,
         "dispatch": "_autodetect_std",
     },

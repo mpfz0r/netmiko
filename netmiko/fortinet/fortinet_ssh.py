@@ -135,6 +135,8 @@ Alternatively you can try configuring 'configure system console -> set output st
             return "v7_or_later"
         elif re.search(r"^Version: .* (v[654]\.).*$", output, flags=re.M):
             return "v6_or_earlier"
+        elif re.search(r"^Version: FortiSwitch.* (v[345678]\.).*$", output, flags=re.M):
+            return "fortiswitch_v3_or_later"
         else:
             raise ValueError("Unexpected FortiOS Version encountered.")
 
@@ -189,6 +191,8 @@ Alternatively you can try configuring 'configure system console -> set output st
         if "v6" in self._os_version:
             return self._get_output_mode_v6()
         elif "v7" in self._os_version:
+            return self._get_output_mode_v7()
+        elif "fortiswitch" in self._os_version:
             return self._get_output_mode_v7()
         else:
             raise ValueError("Unexpected FortiOS Version encountered.")
