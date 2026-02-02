@@ -65,13 +65,13 @@ class FortinetSSH(NoConfig, NoEnable, CiscoSSHConnection):
             pattern=pattern,
         )
 
-    def find_prompt(self, delay_factor: float = 1.0, pattern: Optional[str] = None) -> str:
-        if not pattern:
-            pattern = self.prompt_pattern
-        return super().find_prompt(
-            delay_factor=delay_factor,
-            pattern=pattern,
-        )
+    #def find_prompt(self, delay_factor: float = 1.0, pattern: Optional[str] = None) -> str:
+    #    if not pattern:
+    #        pattern = self.prompt_pattern
+    #    return super().find_prompt(
+    #        delay_factor=delay_factor,
+    #        pattern=pattern,
+    #    )
 
     def _vdoms_enabled(self) -> bool:
         """Determine whether virtual domains are enabled or not."""
